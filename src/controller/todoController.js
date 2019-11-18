@@ -21,7 +21,7 @@ exports.registerTodo = async (req, res, next) => {
 }
 
 exports.updateTodo = async (req, res, next) => {
-  let id = req.body.id;
+  let id = req.params.id;
   let todo = req.body.todo;
   let limit = req.body.limit;
   await redis.hmset(id, col1, todo, col2, limit);
@@ -32,7 +32,7 @@ exports.updateTodo = async (req, res, next) => {
 }
 
 exports.deleteTodo = async (req, res, next) => {
-  let id = req.body.id;
+  let id = req.params.id;
   await redis.hdel(id, col1, col2);
   return res.status(config.HTTP_STATUS.SUCCESS).send({
     "message": config.MESSAGE.SUCCESS.DELETE
