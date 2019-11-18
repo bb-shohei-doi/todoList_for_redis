@@ -1,0 +1,20 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "sdoi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "co": "^4.6.0",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "ioredis": "^4.14.1",
+    "redis": "^2.8.0",
+    "uuid": "^3.3.3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HTTP_STATUS": {
+    "SUCCESS": 200
+  },
+  "MESSAGE": {
+    "SUCCESS": {
+      "REGISTER": "success for register!",
+      "UPDATE": "success for update!",
+      "DELETE": "success for delete data!"
+    }
+  },
+  "FAILURE": {}
+}
