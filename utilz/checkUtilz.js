@@ -1,3 +1,5 @@
+const config = require('config');
+
 const errMsg = {
   "Error": {
     "message": "Not enough your request body."
@@ -9,8 +11,7 @@ exports.requiredCheckForReg = (req, res, next) => {
     // ボディにtodoとlimitが設定されていれば次の処理へ
     return next();
   }
-  throw new Error('doi error.');
-  // return res.status(400).send(errMsg);
+  return res.status(config.HTTP_STATUS.BAD_REQUEST).send(errMsg);
 }
 
 exports.requiredCheckForUpd = (req, res, next) => {
@@ -18,7 +19,7 @@ exports.requiredCheckForUpd = (req, res, next) => {
     // ボディにidとtodoとlimitが設定されていれば次の処理へ
     return next();
   }
-  return res.status(400).send(errMsg);
+  return res.status(config.HTTP_STATUS.BAD_REQUEST).send(errMsg);
 }
 
 exports.requiredCheckForDel = (req, res, next) => {
@@ -26,5 +27,5 @@ exports.requiredCheckForDel = (req, res, next) => {
     // ボディにidが設定されていれば次の処理へ
     return next();
   }
-  return res.status(400).send(errMsg);
+  return res.status(config.HTTP_STATUS.BAD_REQUEST).send(errMsg);
 }

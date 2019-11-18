@@ -10,7 +10,7 @@ app.use(require('./routes/todo'));
 app.use(function (err, req, res, next) {
   console.log('Error -> ' + err);
 
-  res.status('500').render('error');
+  res.status(config.HTTP_STATUS.INTERNAL_SERVER_ERROR).render('error');
 });
 
 app.listen(3000, () => {
